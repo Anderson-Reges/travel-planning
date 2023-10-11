@@ -5,6 +5,9 @@ import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.time.format.DateTimeFormatter;
 
+/**
+ * Classe Tempo.
+ */
 public class Tempo {
   private LocalDateTime embarque;
   private String origem;
@@ -15,7 +18,6 @@ public class Tempo {
 
   /**
    * Método construtor da classe.
-   * 
    */
   public Tempo(String embarque, String origem, String destino, int duracao) {
     this.embarque = LocalDateTime.parse(embarque, DateTimeFormatter.ofPattern(formato));
@@ -26,10 +28,11 @@ public class Tempo {
 
   /**
    * retonarDesembarqueHorarioLocalDestino.
-   * 
+   * <p>
    * Transforma todos os fusos horarios disponíveis na classe ZoneId em um array de Strings, onde
    * nos percorremos em busca do identificador do fuso horario do nosso destino, uma vez com esse
    * fuso horario, podemos recuperar o horario local de desembarque no nosso destino
+   * </p>
    */
   public String retonarDesembarqueHorarioLocalDestino() {
 
@@ -39,7 +42,9 @@ public class Tempo {
     int indiceFusoHorarioOrigem = 0;
 
     for (int i = 0; i < fusosHorarios.length; i++) {
-      /* Implemente sua solução aqui */
+      if (fusosHorarios[i].contains(this.origem)) {
+        indiceFusoHorarioOrigem = i;
+      }
     }
 
     String fusoHorarioOrigem = fusosHorarios[indiceFusoHorarioOrigem];
@@ -51,7 +56,9 @@ public class Tempo {
     int indiceFusoHorarioDestino = 0;
 
     for (int i = 0; i < fusosHorarios.length; i++) {
-      /* Implemente sua solução aqui */
+      if (fusosHorarios[i].contains(this.destino)) {
+        indiceFusoHorarioDestino = i;
+      }
     }
 
     String fusoHorarioDestino = fusosHorarios[indiceFusoHorarioDestino];
@@ -63,7 +70,6 @@ public class Tempo {
 
   /**
    * retonarDesembarqueHorarioLocalOrigem.
-   * 
    */
   public String retonarDesembarqueHorarioLocalOrigem() {
     String[] fusosHorarios = new String[ZoneId.getAvailableZoneIds().size()];
@@ -72,7 +78,9 @@ public class Tempo {
     int indiceFusoHorarioOrigem = 0;
 
     for (int i = 0; i < fusosHorarios.length; i++) {
-      /* Implemente sua solução aqui */
+      if (fusosHorarios[i].contains(this.destino)) {
+        indiceFusoHorarioOrigem = i;
+      }
     }
 
     String fusoHorarioOrigem = fusosHorarios[indiceFusoHorarioOrigem];

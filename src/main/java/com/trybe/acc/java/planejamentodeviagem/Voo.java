@@ -1,5 +1,8 @@
 package com.trybe.acc.java.planejamentodeviagem;
 
+/**
+ * Classe Voo.
+ */
 public class Voo {
   private int tempoVoo;
 
@@ -11,7 +14,7 @@ public class Voo {
 
     Double duracaoDouble = distanciaKm / 700.0;
 
-    /* Implemente sua solução aqui */
+    return duracaoDouble.intValue();
   }
 
   /**
@@ -20,6 +23,7 @@ public class Voo {
    */
   public String retornarInformacaoVoo(String embarque, String origem, String desembarque,
       String destino) {
-    /* Implemente sua solução aqui */
+    return "Embarque no dia: " + embarque + "\nSaindo de: " + origem + "\nIndo para: "
+        + destino + "\nDesembarque no dia: " + desembarque;
   }
 }

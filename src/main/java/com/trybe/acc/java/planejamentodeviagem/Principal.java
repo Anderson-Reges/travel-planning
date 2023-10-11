@@ -2,6 +2,9 @@ package com.trybe.acc.java.planejamentodeviagem;
 
 import java.util.Scanner;
 
+/**
+ * Classe Principal.
+ */
 public class Principal {
 
   /**
@@ -33,7 +36,7 @@ public class Principal {
             .print("Entre com a data e o horário da partida (formato: dd/mm/aaaa hh:mm:ss): ");
         String partida = scanner.nextLine();
         System.out.print("Entre com a distância em km entre a cidade de origem e a de destino: ");
-        Double distanciaKm = scanner.nextDouble();
+        double distanciaKm = scanner.nextDouble();
 
         Viagem viagem = new Viagem(partida, origem, destino, distanciaKm);
 
